@@ -1,0 +1,8 @@
+ZSP_MATERIAL
+GROUP @default
+ENTRY c_diffuse 255 255 255
+ENTRY t_diffuse textures/emsta/emsta_Shoes_Diffuse.DDS
+ENTRY t_normal textures/emsta/emsta_Shoes_Normal.DDS
+ENTRY t_specular @none
+ENTRY t_height @none
+ENTRY f_shininess 0.3

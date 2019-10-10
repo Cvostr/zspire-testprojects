@@ -1,0 +1,8 @@
+ZSP_MATERIAL
+GROUP @default
+ENTRY c_diffuse 255 255 255
+ENTRY t_diffuse textures/cowman.dds
+ENTRY t_normal @none
+ENTRY t_specular @none
+ENTRY t_height @none
+ENTRY f_shininess 0

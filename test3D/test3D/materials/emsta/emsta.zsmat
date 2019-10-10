@@ -1,0 +1,8 @@
+ZSP_MATERIAL
+GROUP @default
+ENTRY c_diffuse 211 215 207
+ENTRY t_diffuse textures/emsta/emsta_Body_Diffuse.dds
+ENTRY t_normal textures/emsta/emsta_Body_Normal.DDS
+ENTRY t_specular @none
+ENTRY t_height @none
+ENTRY f_shininess 0.5
