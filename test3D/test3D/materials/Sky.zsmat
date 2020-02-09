@@ -1,3 +1,0 @@
-ZSP_MATERIAL
-GROUP @skybox
-ENTRY skytexture3 textures/skybox/right.dds textures/skybox/left.dds textures/skybox/top.dds textures/skybox/bottom.dds textures/skybox/back.dds textures/skybox/front.dds 
