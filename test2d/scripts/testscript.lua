@@ -41,7 +41,7 @@ onFrame = function(frameTime)
         	obj:setActive(false)
     	end
 	if(input.isKeyPressed(input.KEY_G)) then 
-        	obj:setLabel("PIDOR")
+        obj:setLabel("PIDOR")
 
 		mWorld:findObject("player"):script():getScript("scripts/char_move.lua"):func("printtext", "PIDOR", 33, 22.0)
 		mWorld:findObject("player"):script():getScript("scripts/char_move.lua"):func("charmove", 3,3,3)
