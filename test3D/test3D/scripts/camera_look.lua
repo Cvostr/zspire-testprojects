@@ -10,6 +10,10 @@ onStart = function(g_object, world)
 	return 0
 end
 
+getyaw = function()
+    return yaw
+end
+
 onFrame = function(frameTime)
 	mouse_state = input.getMouseState() --Obtain mouse state
 	camera = mWorld.camera --current camera state
@@ -21,9 +25,14 @@ onFrame = function(frameTime)
     	pitch = 89
 	end
 
-    if (pitch < -89) then
-        pitch = -89
+    if (pitch < 15) then
+        pitch = 15
+    end
+    
+    if (yaw > 360) then
+        yaw = 0
 	end
+
 	--Fill the vector
     front = Vec3(0,0,0)
     front.x = math.cos(math.rad(yaw)) * math.cos(math.rad(pitch))

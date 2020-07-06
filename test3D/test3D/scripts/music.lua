@@ -5,7 +5,7 @@ mAudio = 0
 onStart = function(g_object, world)
 	mGameObject = g_object  
 	mAudio = mGameObject:audio()
-	mAudio:setAudioFile("file1.wav")
+	mAudio:setAudioResource(zsres.file1_wav)
 	return 0
 end
 
