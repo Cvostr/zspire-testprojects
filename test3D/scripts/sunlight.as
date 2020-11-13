@@ -4,15 +4,17 @@ bool test_glob_3 = true;
 Vec3 test_vec = Vec3(0, 1, 0);
 string test_str = "str";
 
+
 rgbColor col = rgbColor(255,255,245);
+//Quat tquat = Quat(1,1,1,1);
 
 AudioResource@ audio;
 
-class angel : ZPScript{
+class sunlight : ZPScript{
 
 	GameObject@ obj_ref;
 	
-	angel(GameObject@ o)
+	sunlight(GameObject@ o)
 	{
 		@obj_ref = o;
 		print(test_glob, test_glob_2);

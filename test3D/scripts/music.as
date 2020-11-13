@@ -1,7 +1,7 @@
-class angel : ZPScript{
+class music : ZPScript{
 	GameObject@ obj;
 	AudioSource@ aud;
-	angel(GameObject@ o){
+	music(GameObject@ o){
 		@obj = o;
 		@aud = obj.audio();
 	}

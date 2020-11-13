@@ -1,7 +1,7 @@
 string player_obj_name = "test";
 float dist_to_player = 15;
 
-class angel : ZPScript{
+class CameraLook : ZPScript{
 
 	GameObject@ player;
 	GameObject@ obj_ref;
@@ -12,7 +12,7 @@ class angel : ZPScript{
 	float pitch = 0;
 	float yaw = 0;
 
-	angel(GameObject@ o){
+	CameraLook(GameObject@ o){
 		@obj_ref = o;
 	}
 	void Start() {
@@ -45,10 +45,11 @@ class angel : ZPScript{
 		front.z = sin(rad(yaw)) * cos(rad(pitch));
 		//normalize vector        
 		front.Normalize();
+		
 		cam.front = front;
-		cam.updateViewMat();
-
 		cam.pos = player.transform().translation + cam.front * -dist_to_player;
+
+		cam.updateViewMat();
 
 		//print(mouse.relX, mouse.relY, cam.front, "xui pizda", true, false);
 	}

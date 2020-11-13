@@ -1,8 +1,11 @@
+//usde scripts/inh.as
+
 float speed = 7;
 class Player : ZPScript{
 	CharacterController@ char;
 	GameObject@ obj_ref;
 	Camera@ cam;
+	//inh@ fh;
 	
 	Player(GameObject@ o)
 	{
@@ -12,8 +15,15 @@ class Player : ZPScript{
 	void Start() {
 		@char = obj_ref.char_ctrl();
 		@cam = obj_ref.world.getCamera();
+
+		
 	}
 	void Update(){
+
+		ZPScript@ scr = obj_ref.getScriptClass("inh");
+		//@fh = cast<inh>(scr);
+		//fh.testsc();
+
 		bool moved = false;
 		Vec3 linearVel = Vec3(0, -10, 0);
 
@@ -48,8 +58,11 @@ class Player : ZPScript{
         	obj_ref.anim().Play();
         	//mTransform:setRotation(Vec3(mTransform.rotation.x, (180 - yaw), mTransform.rotation.z))
     	}else{
-        	obj_ref.anim().Stop();
+        	//obj_ref.anim().Stop();
     	}
 
+	}
+	void ttt(){
+		print("ttt");
 	}
 }
