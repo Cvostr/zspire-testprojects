@@ -6,10 +6,13 @@ class music : ZPScript{
 		@aud = obj.audio();
 	}
 	void Start() {
-		aud.setAudio(getResources().getAudio("filedd.wav"));
-		aud.Play();
+		aud.setAudio(getResources().getAudio("audio/file1"));
+		PlayMus();
 	}
 	void Update(){
 
+	}
+	void PlayMus(){
+		aud.Play();
 	}
 }

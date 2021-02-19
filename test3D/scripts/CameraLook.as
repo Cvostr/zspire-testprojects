@@ -1,26 +1,28 @@
-string player_obj_name = "test";
-float dist_to_player = 15;
-
 class CameraLook : ZPScript{
+
+	string player_obj_name = "test";
+	float dist_to_player = 15;
 
 	GameObject@ player;
 	GameObject@ obj_ref;
 	World@ world;
 	MouseState@ mouse;
-	Camera@ cam;
+	CameraComponent@ ObjCamera;
 
 	float pitch = 0;
 	float yaw = 0;
 
 	CameraLook(GameObject@ o){
 		@obj_ref = o;
+		@ObjCamera = o.camera();
 	}
 	void Start() {
 		@mouse = getMouseState();
 		@world = obj_ref.world;
-		@cam = world.getCamera();
 
 		@player = world.findObject(player_obj_name);
+
+		world.AddFromPrefab(getResources().getPrefab("Pilot"));
 	}
 	void Update(){
 		yaw += mouse.relX * 0.16; //new pitch value
@@ -30,8 +32,8 @@ class CameraLook : ZPScript{
     		pitch = 89;
 		}
 
-		if (pitch < 15){
-			pitch = 15;
+		if (pitch < 5){
+			pitch = 5;
 		}
 		
 		if (yaw > 360) {
@@ -46,11 +48,9 @@ class CameraLook : ZPScript{
 		//normalize vector        
 		front.Normalize();
 		
-		cam.front = front;
-		cam.pos = player.transform().translation + cam.front * -dist_to_player;
+		Vec3 newPos = player.transform().translation + front * -dist_to_player;
 
-		cam.updateViewMat();
-
-		//print(mouse.relX, mouse.relY, cam.front, "xui pizda", true, false);
+		obj_ref.transform().setTranslation(newPos);
+		obj_ref.transform().setRotation(Vec3(pitch, yaw, 0));
 	}
 }
