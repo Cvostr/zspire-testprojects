@@ -38,5 +38,9 @@ class menu : ZPScript{
 			GetWindow().SetWindowSize(1280, 720);
 		if(btn1.isClicked())
 			GetWindow().SetWindowMode(1);
+
+		if(isKeyPressed(KEY_B)){
+			GetWindow().SetWindowSize(1280, 720);
+		}
 	}
 }
